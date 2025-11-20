@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent {
-  title = 'Web Developer';
+  title = 'Software Developer';
   subtitle = 'Creating beautiful, functional, and user-centered digital experiences from Rochester, NY';
   name = 'Jayson Guevarra';
   
