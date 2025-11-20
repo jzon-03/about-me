@@ -92,6 +92,13 @@
   position: relative;
   height: 250px;
   overflow: hidden;
+  
+  .project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
 }
 
 .image-placeholder {
@@ -119,7 +126,19 @@
   transition: opacity 0.3s ease;
 }
 
+.featured-project:hover .project-img {
+  transform: scale(1.05);
+}
+
 .featured-project:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-card:hover .card-img {
+  transform: scale(1.05);
+}
+
+.project-card:hover .card-overlay {
   opacity: 1;
 }
 
@@ -240,6 +259,13 @@
   position: relative;
   height: 200px;
   overflow: hidden;
+  
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
 }
 
 .card-overlay {
