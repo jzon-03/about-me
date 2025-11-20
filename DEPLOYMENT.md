@@ -11,7 +11,7 @@ Add this CNAME record to your DNS provider:
 ```
 Type: CNAME
 Name: itsme
-Value: [your-github-username].github.io
+Value: jzon-03.github.io
 TTL: Auto or 3600
 ```
 

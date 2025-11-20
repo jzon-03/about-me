@@ -10,9 +10,8 @@ export class ContactComponent {
     email: 'jzon_03@yahoo.com',
     phone: '(607) 768-6410',
     location: 'Rochester, NY',
-    linkedin: 'https://linkedin.com/in/jaysonguevarra',
-    github: 'https://github.com/jaysonguevarra',
-    twitter: 'https://twitter.com/jaysonguevarra'
+    linkedin: 'https://www.linkedin.com/in/deploy-jg',
+    github: 'https://github.com/jzon-03'
   };
   
   contactForm = {
