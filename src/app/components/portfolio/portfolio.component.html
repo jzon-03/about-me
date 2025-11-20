@@ -1,0 +1,96 @@
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">My Portfolio</h2>
+      <p class="section-subtitle">Showcasing my latest projects and creative work</p>
+    </div>
+    
+    <!-- Featured Projects -->
+    <div class="featured-section">
+      <h3 class="featured-title">Featured Projects</h3>
+      <div class="featured-grid">
+        <div class="featured-project" *ngFor="let project of featuredProjects">
+          <div class="project-image">
+            <div class="image-placeholder">
+              <span class="project-icon">🚀</span>
+            </div>
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a [href]="project.liveUrl" *ngIf="project.liveUrl" target="_blank" class="action-btn">
+                  <span>🌐</span> Live Demo
+                </a>
+                <a [href]="project.githubUrl" *ngIf="project.githubUrl" target="_blank" class="action-btn">
+                  <span>📂</span> Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">{{ project.category | uppercase }}</div>
+            <h4 class="project-title">{{ project.title }}</h4>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-technologies">
+              <span class="tech-tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- All Projects -->
+    <div class="all-projects-section">
+      <div class="filter-tabs">
+        <button 
+          class="filter-tab" 
+          [class.active]="selectedCategory === category.id"
+          *ngFor="let category of categories"
+          (click)="selectCategory(category.id)">
+          {{ category.name }}
+        </button>
+      </div>
+      
+      <div class="projects-grid">
+        <div class="project-card" *ngFor="let project of filteredProjects">
+          <div class="card-image">
+            <div class="image-placeholder">
+              <span class="project-icon">
+                {{ project.category === 'web' ? '💻' : project.category === 'mobile' ? '📱' : '🎨' }}
+              </span>
+            </div>
+            <div class="card-overlay">
+              <div class="card-actions">
+                <a [href]="project.liveUrl" *ngIf="project.liveUrl" target="_blank" class="action-icon">
+                  <span>🔗</span>
+                </a>
+                <a [href]="project.githubUrl" *ngIf="project.githubUrl" target="_blank" class="action-icon">
+                  <span>💻</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <h4 class="card-title">{{ project.title }}</h4>
+            <p class="card-description">{{ project.description }}</p>
+            <div class="card-technologies">
+              <span class="tech-chip" *ngFor="let tech of project.technologies.slice(0, 3)">
+                {{ tech }}
+              </span>
+              <span class="tech-more" *ngIf="project.technologies.length > 3">
+                +{{ project.technologies.length - 3 }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Call to Action -->
+    <div class="portfolio-cta">
+      <h3>Interested in working together?</h3>
+      <p>Let's discuss your next project and bring your vision to life</p>
+      <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+        Start a Project
+      </button>
+    </div>
+  </div>
+</section>

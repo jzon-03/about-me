@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent {
-  title = 'Web Designer & Developer';
-  subtitle = 'Creating beautiful, functional, and user-centered digital experiences';
-  name = 'Your Name'; // Replace with your actual name
+  title = 'Web Developer';
+  subtitle = 'Creating beautiful, functional, and user-centered digital experiences from Rochester, NY';
+  name = 'Jayson Guevarra';
   
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);

@@ -1,0 +1,55 @@
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">Get to know who I am and what I do</p>
+    </div>
+    
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Crafting Digital Experiences</h3>
+        <p class="description">{{ aboutText }}</p>
+        
+        <div class="achievements">
+          <div class="achievement" *ngFor="let achievement of achievements">
+            <span class="achievement-number">{{ achievement.number }}</span>
+            <span class="achievement-label">{{ achievement.label }}</span>
+          </div>
+        </div>
+        
+        <button class="btn btn-primary">Download CV</button>
+      </div>
+      
+      <div class="about-visual">
+        <div class="profile-card">
+          <div class="profile-image">
+            <div class="image-placeholder">
+              <i class="icon">👨‍💻</i>
+            </div>
+          </div>
+          <div class="profile-info">
+            <h4>Professional Profile</h4>
+            <p>Dedicated to creating exceptional web experiences through innovative design and clean code.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="experience-section">
+      <h3>Professional Journey</h3>
+      <div class="experience-timeline">
+        <div class="experience-item" *ngFor="let exp of experiences; index as i">
+          <div class="experience-marker"></div>
+          <div class="experience-content">
+            <div class="experience-header">
+              <h4>{{ exp.title }}</h4>
+              <span class="experience-period">{{ exp.period }}</span>
+            </div>
+            <h5 class="experience-company">{{ exp.company }}</h5>
+            <p class="experience-description">{{ exp.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

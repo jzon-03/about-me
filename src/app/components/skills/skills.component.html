@@ -1,0 +1,74 @@
+<section id="skills" class="skills">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Skills & Expertise</h2>
+      <p class="section-subtitle">Technologies and tools I work with</p>
+    </div>
+    
+    <div class="skills-grid">
+      <!-- Technical Skills -->
+      <div class="skill-category">
+        <h3 class="category-title">
+          <span class="category-icon">💻</span>
+          Technical Skills
+        </h3>
+        <div class="skills-list">
+          <div class="skill-item" *ngFor="let skill of technicalSkills">
+            <div class="skill-header">
+              <span class="skill-icon">{{ skill.icon }}</span>
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-percentage">{{ skill.level }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Design Skills -->
+      <div class="skill-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          Design Skills
+        </h3>
+        <div class="skills-list">
+          <div class="skill-item" *ngFor="let skill of designSkills">
+            <div class="skill-header">
+              <span class="skill-icon">{{ skill.icon }}</span>
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-percentage">{{ skill.level }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Tools & Technologies -->
+    <div class="tools-section">
+      <h3 class="tools-title">Tools & Technologies</h3>
+      <div class="tools-grid">
+        <div class="tool-item" *ngFor="let tool of tools">
+          <span class="tool-icon">{{ tool.icon }}</span>
+          <span class="tool-name">{{ tool.name }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Additional Info -->
+    <div class="skills-footer">
+      <div class="learning-section">
+        <h4>Currently Learning</h4>
+        <div class="learning-items">
+          <span class="learning-item">🔥 Next.js</span>
+          <span class="learning-item">🦀 Rust</span>
+          <span class="learning-item">🧠 Machine Learning</span>
+          <span class="learning-item">📊 Data Visualization</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

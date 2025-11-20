@@ -1,0 +1,82 @@
+<nav class="navbar" [class.scrolled]="isScrolled" [class.mobile-open]="isMobileMenuOpen">
+  <div class="nav-container">
+    <!-- Logo/Brand -->
+    <div class="nav-brand">
+      <a href="#" class="brand-link" (click)="scrollToSection('home')">
+        <span class="brand-icon">💻</span>
+        <span class="brand-text">Portfolio</span>
+      </a>
+    </div>
+    
+    <!-- Desktop Navigation -->
+    <ul class="nav-menu">
+      <li class="nav-item" *ngFor="let item of navItems">
+        <a 
+          [href]="item.href" 
+          class="nav-link" 
+          [class.active]="activeSection === item.id"
+          (click)="scrollToSection(item.id); $event.preventDefault()">
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+    
+    <!-- CTA Button -->
+    <div class="nav-cta">
+      <button class="cta-btn" (click)="scrollToSection('contact')">
+        Let's Talk
+      </button>
+    </div>
+    
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+      <span class="toggle-line"></span>
+      <span class="toggle-line"></span>
+      <span class="toggle-line"></span>
+    </button>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()"></div>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+      <div class="mobile-header">
+        <div class="mobile-brand">
+          <span class="brand-icon">💻</span>
+          <span class="brand-text">Portfolio</span>
+        </div>
+        <button class="mobile-close" (click)="toggleMobileMenu()">
+          ✕
+        </button>
+      </div>
+      
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item" *ngFor="let item of navItems; index as i" 
+            [style.animation-delay.ms]="i * 100">
+          <a 
+            [href]="item.href" 
+            class="mobile-nav-link" 
+            [class.active]="activeSection === item.id"
+            (click)="scrollToSection(item.id); $event.preventDefault()">
+            <span class="link-text">{{ item.label }}</span>
+            <span class="link-arrow">→</span>
+          </a>
+        </li>
+      </ul>
+      
+      <div class="mobile-footer">
+        <button class="mobile-cta-btn" (click)="scrollToSection('contact')">
+          Start a Project
+        </button>
+        <div class="mobile-social">
+          <span class="social-label">Follow me:</span>
+          <div class="social-links">
+            <a href="#" class="social-link">💼</a>
+            <a href="#" class="social-link">🐙</a>
+            <a href="#" class="social-link">🐦</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

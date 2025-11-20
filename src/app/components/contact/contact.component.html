@@ -1,0 +1,161 @@
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Let's discuss your next project and bring your ideas to life</p>
+    </div>
+    
+    <div class="contact-content">
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <h3>Let's Talk</h3>
+        <p class="contact-intro">
+          I'm always excited to work on new projects and collaborate with amazing people. 
+          Whether you have a question, want to start a project, or just say hello, I'd love to hear from you!
+        </p>
+        
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <a [href]="'mailto:' + contactInfo.email">{{ contactInfo.email }}</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-text">
+              <h4>Phone</h4>
+              <a [href]="'tel:' + contactInfo.phone">{{ contactInfo.phone }}</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text">
+              <h4>Location</h4>
+              <span>{{ contactInfo.location }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <h4>Follow Me</h4>
+          <div class="social-icons">
+            <a [href]="contactInfo.linkedin" target="_blank" class="social-link linkedin">
+              <span>💼</span>
+            </a>
+            <a [href]="contactInfo.github" target="_blank" class="social-link github">
+              <span>🐙</span>
+            </a>
+            <a [href]="contactInfo.twitter" target="_blank" class="social-link twitter">
+              <span>🐦</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Form -->
+      <div class="contact-form-section">
+        <div class="form-container">
+          <h3>Send Me a Message</h3>
+          
+          <!-- Success Message -->
+          <div class="success-message" [class.show]="submitSuccess">
+            <div class="success-icon">✅</div>
+            <h4>Message Sent Successfully!</h4>
+            <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+          </div>
+          
+          <!-- Contact Form -->
+          <form class="contact-form" (ngSubmit)="onSubmit()" [class.submitting]="isSubmitting">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  [(ngModel)]="contactForm.name" 
+                  name="name"
+                  placeholder="Your full name"
+                  required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  [(ngModel)]="contactForm.email" 
+                  name="email"
+                  placeholder="your.email@example.com"
+                  required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input 
+                type="text" 
+                id="subject" 
+                [(ngModel)]="contactForm.subject" 
+                name="subject"
+                placeholder="What's this about?"
+                required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea 
+                id="message" 
+                [(ngModel)]="contactForm.message" 
+                name="message"
+                rows="6"
+                placeholder="Tell me about your project or just say hello!"
+                required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn" [disabled]="isSubmitting">
+              <span *ngIf="!isSubmitting">Send Message</span>
+              <span *ngIf="isSubmitting" class="loading">
+                <span class="spinner"></span>
+                Sending...
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Quick Contact Actions -->
+    <div class="quick-actions">
+      <h3>Quick Actions</h3>
+      <div class="action-buttons">
+        <a [href]="'mailto:' + contactInfo.email" class="action-btn email-btn">
+          <span class="btn-icon">📧</span>
+          <div class="btn-content">
+            <span class="btn-title">Email Me</span>
+            <span class="btn-subtitle">Get a quick response</span>
+          </div>
+        </a>
+        
+        <a href="#" class="action-btn calendar-btn">
+          <span class="btn-icon">📅</span>
+          <div class="btn-content">
+            <span class="btn-title">Schedule a Call</span>
+            <span class="btn-subtitle">Let's talk about your project</span>
+          </div>
+        </a>
+        
+        <a [href]="contactInfo.linkedin" target="_blank" class="action-btn linkedin-btn">
+          <span class="btn-icon">💼</span>
+          <div class="btn-content">
+            <span class="btn-title">Connect on LinkedIn</span>
+            <span class="btn-subtitle">Professional networking</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
