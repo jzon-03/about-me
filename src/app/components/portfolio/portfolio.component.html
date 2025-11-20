@@ -11,9 +11,7 @@
       <div class="featured-grid">
         <div class="featured-project" *ngFor="let project of featuredProjects">
           <div class="project-image">
-            <div class="image-placeholder">
-              <span class="project-icon">🚀</span>
-            </div>
+            <img [src]="project.image" [alt]="project.title + ' project screenshot'" class="project-img">
             <div class="project-overlay">
               <div class="project-actions">
                 <a [href]="project.liveUrl" *ngIf="project.liveUrl" target="_blank" class="action-btn">
