@@ -8,9 +8,7 @@ import { Component } from '@angular/core';
 export class ContactComponent {
   contactInfo = {
     email: 'jzon_03@yahoo.com',
-    phone: '(607) 768-6410',
     location: 'Rochester, NY',
-    linkedin: 'https://www.linkedin.com/in/deploy-jg',
-    github: 'https://github.com/jzon-03'
+    linkedin: 'https://www.linkedin.com/in/deploy-jg'
   };
 }
