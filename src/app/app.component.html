@@ -1,55 +1,429 @@
-<!-- Navigation -->
-<app-navbar></app-navbar>
+<div class="site">
 
-<!-- Hero Section -->
-<section id="hero">
-  <app-hero></app-hero>
-</section>
+  <!-- HERO -->
+  <section class="hero">
+    <nav class="navbar">
+      <div class="logo">
+        <span class="logo-mark">&lt;/&gt;</span>
+        <span>The Practical Apps © {{ currentYear }}</span>
+      </div>
 
-<!-- About Section -->
-<app-about></app-about>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="nav-cta">Let's Talk</a>
+      </div>
 
-<!-- Skills Section -->
-<app-skills></app-skills>
+      <button class="menu-btn" (click)="toggleMenu()">
+        ☰
+      </button>
+    </nav>
 
-<!-- Portfolio Section -->
-<app-portfolio></app-portfolio>
+    <div class="mobile-menu" [class.open]="menuOpen">
+      <a href="#work" (click)="toggleMenu()">Work</a>
+      <a href="#services" (click)="toggleMenu()">Services</a>
+      <a href="#process" (click)="toggleMenu()">Process</a>
+      <a href="#contact" (click)="toggleMenu()">Let's Talk</a>
+    </div>
 
-<!-- Contact Section -->
-<app-contact></app-contact>
+    <div class="hero-content">
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
+      <div class="hero-badge">
+        <span class="status-dot"></span>
+        Web Designer & Developer
+      </div>
+
+      <h1>
+        Websites that make
+        <span>small businesses</span>
+        look big.
+      </h1>
+
+      <p class="hero-text">
+        I design and build modern, fast, mobile-friendly websites
+        for local businesses, musicians, organizations, and entrepreneurs.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#work" class="btn btn-primary">
+          See My Work
+          <span>→</span>
+        </a>
+
+        <a href="#contact" class="btn btn-secondary">
+          Start a Project
+        </a>
+      </div>
+
+      <div class="hero-note">
+        <span>★</span>
+        Custom websites. Personal service. No cookie-cutter templates.
+      </div>
+
+    </div>
+
+    <div class="hero-decoration">
+      <div class="code-card">
+        <div class="code-header">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="code-content">
+          <div><span class="purple">const</span> website = <span class="green">"great"</span>;</div>
+          <div><span class="purple">if</span> (business.needsWebsite) </div>
+          <div class="indent">buildSomethingAwesome();</div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- WORK -->
+  <section class="section work-section" id="work">
+
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">SELECTED WORK</span>
+        <h2>Websites I've built.</h2>
+      </div>
+
+      <p>
+        Every project is designed around the business,
+        its customers, and what it needs to accomplish.
+      </p>
+    </div>
+
+    <div class="projects">
+
+      <article class="project-card featured">
+        <div class="project-image green-office">
+          <div class="browser">
+            <div class="browser-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="mock-site">
+              <div class="mock-nav"></div>
+              <div class="mock-title"></div>
+              <div class="mock-text"></div>
+              <div class="mock-button"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-info">
+          <span class="project-category">BUSINESS / AGRICULTURE</span>
+          <h3>Green Office Farms</h3>
+          <p>
+            A modern website for a corporate hydroponics concept
+            focused on bringing fresh produce into the workplace.
+          </p>
+
+          <div class="project-tags">
+            <span>Angular</span>
+            <span>Responsive</span>
+            <span>SEO</span>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="project-card">
+        <div class="project-image band-site">
+          <div class="music-note">♪</div>
+          <div class="mock-band-title">STATE LINE</div>
+          <div class="mock-band-subtitle">MODERN COUNTRY</div>
+        </div>
+
+        <div class="project-info">
+          <span class="project-category">MUSIC / ENTERTAINMENT</span>
+          <h3>Band Websites</h3>
+          <p>
+            High-energy websites designed to help local bands
+            promote shows, music, photos, and bookings.
+          </p>
+
+          <div class="project-tags">
+            <span>Events</span>
+            <span>Gallery</span>
+            <span>Bookings</span>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="project-card">
+        <div class="project-image market-site">
+          <div class="market-card">
+            <span>亞洲</span>
+            <strong>CHIT TRA</strong>
+            <small>ASIAN GROCERY</small>
+          </div>
+        </div>
+
+        <div class="project-info">
+          <span class="project-category">LOCAL BUSINESS</span>
+          <h3>Chit Tra Market</h3>
+          <p>
+            A clean local-business website focused on products,
+            location, hours, and helping customers find the store.
+          </p>
+
+          <div class="project-tags">
+            <span>Local Business</span>
+            <span>Maps</span>
+            <span>Mobile</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+  <section class="section services-section" id="services">
+
+    <div class="section-heading centered">
+      <span class="eyebrow">WHAT I DO</span>
+      <h2>More than just a pretty website.</h2>
+      <p>
+        I combine design and software development to create websites
+        that actually work for your business.
+      </p>
+    </div>
+
+    <div class="services">
+
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <div class="service-icon">✦</div>
+        <h3>Website Design</h3>
+        <p>
+          Custom layouts designed specifically for your brand,
+          customers, and goals.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <div class="service-icon">&lt;/&gt;</div>
+        <h3>Web Development</h3>
+        <p>
+          Fast, responsive websites built with modern technologies
+          and clean code.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <div class="service-icon">◎</div>
+        <h3>Local Business</h3>
+        <p>
+          Websites designed to help local customers find you,
+          contact you, and choose you.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">04</div>
+        <div class="service-icon">↗</div>
+        <h3>Website Improvements</h3>
+        <p>
+          Already have a website? I can modernize the design,
+          improve mobile usability, and fix what's not working.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DIFFERENT -->
+  <section class="section difference-section">
+
+    <div class="difference-content">
+
+      <div>
+        <span class="eyebrow">WHY ME?</span>
+
+        <h2>
+          You don't need
+          another website
+          template.
+        </h2>
+
+        <p>
+          You need someone who understands your business and can
+          turn that into a website that feels like it belongs to you.
+        </p>
+      </div>
+
+      <div class="difference-list">
+
+        <div class="difference-item">
+          <span>01</span>
+          <div>
+            <h3>Personal attention</h3>
+            <p>
+              You work directly with the person designing and building
+              your website.
+            </p>
+          </div>
+        </div>
+
+        <div class="difference-item">
+          <span>02</span>
+          <div>
+            <h3>Built from scratch</h3>
+            <p>
+              Your website isn't just another template with your logo
+              pasted on top.
+            </p>
+          </div>
+        </div>
+
+        <div class="difference-item">
+          <span>03</span>
+          <div>
+            <h3>Technology that scales</h3>
+            <p>
+              I build with modern development tools so your site can
+              grow with your business.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="section process-section" id="process">
+
+    <div class="section-heading centered">
+      <span class="eyebrow">THE PROCESS</span>
+      <h2>From idea to online.</h2>
+    </div>
+
+    <div class="process">
+
+      <div class="process-step">
+        <span>01</span>
+        <h3>Let's Talk</h3>
+        <p>
+          We discuss your business, your customers, and what
+          you want the website to accomplish.
+        </p>
+      </div>
+
+      <div class="process-line"></div>
+
+      <div class="process-step">
+        <span>02</span>
+        <h3>Design</h3>
+        <p>
+          I create the visual direction and structure of the
+          website before development begins.
+        </p>
+      </div>
+
+      <div class="process-line"></div>
+
+      <div class="process-step">
+        <span>03</span>
+        <h3>Build</h3>
+        <p>
+          I turn the design into a responsive, production-ready
+          website.
+        </p>
+      </div>
+
+      <div class="process-line"></div>
+
+      <div class="process-step">
+        <span>04</span>
+        <h3>Launch</h3>
+        <p>
+          Your website goes live and your customers can finally
+          find you online.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+
+    <div class="cta-inner">
+
+      <span class="eyebrow">HAVE A PROJECT?</span>
+
+      <h2>
+        Let's build something
+        <span>great.</span>
+      </h2>
+
+      <p>
+        Whether you need a new website or want to improve an existing one,
+        I'd love to hear about it.
+      </p>
+
+      <a href="mailto:hello@thepracticalapps.com" class="btn btn-light">
+        Let's Talk
+        <span>→</span>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-main">
+
       <div class="footer-brand">
-        <h4>💻 Portfolio</h4>
-        <p>Creating beautiful digital experiences that make a difference.</p>
+        <div class="logo">
+          <span class="logo-mark">&lt;/&gt;</span>
+          <span>The Practical Apps</span>
+        </div>
+
+        <p>
+          Websites and software built with purpose.
+        </p>
       </div>
+
       <div class="footer-links">
-        <div class="link-group">
-          <h5>Quick Links</h5>
-          <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="link-group">
-          <h5>Connect</h5>
-          <ul>
-            <li><a href="https://www.linkedin.com/in/deploy-jg" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/jzon-03" target="_blank">GitHub</a></li>
-            <li><a href="mailto:jzon_03@yahoo.com">Email</a></li>
-          </ul>
-        </div>
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
       </div>
+
     </div>
+
     <div class="footer-bottom">
-      <p>&copy; 2025 Jayson Guevarra. All rights reserved.</p>
-      <p>Designed & Built with ❤️ in Rochester, NY</p>
+      <span>{{ currentYear }} The Practical Apps</span>
+      <span>Rochester, NY</span>
     </div>
-  </div>
-</footer>
+
+  </footer>
+
+</div>
